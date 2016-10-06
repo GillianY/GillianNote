@@ -1,0 +1,22 @@
+function:
+
+1.
+
+//arguemts[] : key 為 String 
+在函式內部會自動宣告arguments名稱參考至具陣列外觀的物件
+arguments[i]
+arguments.length
+arguments不是Array實例，它只是具有數字作為特性，特性參考至傳入的引數，並具有length特性代表傳入引數的個數。
+
+2.
+function default return : undefined;
+
+3.
+var output="";
+var ar = new Array(2,4,6,8,9);
+ar[8]="cat";
+output="ar:"+ar +"<br>";
+output+="splice els:"+ar.splice(1,2) +"<br>"; // start from1 ,delete 2 items
+output+="ar:"+ar+"<br>";
+output+="splice els:"+ar.splice(1,0,"dog",10000) +"<br>"; // start from1 ,delete 2 items
+output+="ar:"+ar+"<br>";
