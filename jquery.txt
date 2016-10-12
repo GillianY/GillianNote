@@ -1,0 +1,24 @@
+jquery offical website:
+https://learn.jquery.com/ajax/
+
+jquery example:
+//http://www.noupe.com/development/51-best-of-jquery-tutorials-and-examples.html
+
+http://bxslider.com/examples
+
+http://www.jqueryrain.com/
+
+http://www.jquerybyexample.net/
+
+Basic :
+http://www.jquerysample.com/
+
+
+
+
+to read :
+http://zh-tw.learnlayout.com/clearfix.html
+
+
+GitHub fallow:
+https://github.com/marcbruederlin/particles.js.git 
