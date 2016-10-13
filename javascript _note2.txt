@@ -1,3 +1,18 @@
+1.CSS:
+
+/* 強度相同的時候後覆蓋前*/
+/* class 順序以style 中為主*/
+/* inline >#id>.class >type > inherit*/
+
+
+
+
+
+
+
+
+
+
 function:
 
 1.
