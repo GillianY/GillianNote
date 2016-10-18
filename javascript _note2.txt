@@ -3,16 +3,7 @@
 /* 強度相同的時候後覆蓋前*/
 /* class 順序以style 中為主*/
 /* inline >#id>.class >type > inherit*/
-
-
-
-
-
-
-
-
-
-
+--
 function:
 
 1.
@@ -35,3 +26,187 @@ output+="splice els:"+ar.splice(1,2) +"<br>"; // start from1 ,delete 2 items
 output+="ar:"+ar+"<br>";
 output+="splice els:"+ar.splice(1,0,"dog",10000) +"<br>"; // start from1 ,delete 2 items
 output+="ar:"+ar+"<br>";
+
+
+----
+Constructor 
+http://openhome.cc/Gossip/JavaScript/Constructor.html
+
+1.
+每個透過new建構的物件，都會有個constructor特性，參考至當初建構它的函式。例如：
+js> function Person() {}
+js> var p = new Person();
+js> p.constructor == Person
+true
+
+
+function Person(name, age)
+	{
+		this.age = age;
+		this.name =name;
+		this.toString = function (){ return this.name+":"+this.age; };
+		//return this;	}
+var p = {};
+Person.call(p, 'Justin', 35); // p.constructor != Person // p.constructor = function Object
+
+2.
+
+Person2.call(p2,"Subrina",25); 
+		console.log(p2.getName()+":"+p2.getAge()+"\n");	
+
+function Person2(name, age)
+	{
+		this.getName = function(){return name;}; //closure
+		this.getAge = function(){return age;};
+		this.toString = function (){ return this.name+":"+this.age; };
+		//return this;	
+	}
+
+
+
+上例中，在物件上新增了getName特性，參考至一個函式，該函式形成閉包綁定了參數name，參數也就是區域變數，並非物件上的特性，所以無法透過 . 運算子取得，因此模擬了私用性。
+
+
+3.
+function Accounts(){
+		var balance=0;
+		this.setBalance= function(money){
+			 if(money <0 ){throw new Error('money cannot be negative');};
+			 		balance= money; };	
+					
+		this.getBalance = function() {
+          return balance;
+       };
+	}
+
+	p2 = new Accounts();
+	p2.setBalance(100);
+	console.log(p2.getBalance()+":"+p2.balance+"\n");  // p2.balance==undefined , p2.getBalance():100;
+
+
+-----
+@Prototype
+http://openhome.cc/Gossip/JavaScript/Prototype.html
+
+1.
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    this.toString = function() {
+        return '[' + this.name + ', ' + this.age + ']';
+    };
+}
+
+//p1.toString == p2.toString : false
+
+Person函式中使用了函式實字建立函式實例，並指定給toString特性，每一次呼叫建構式時，都會建立一次函式實例：
+
+
+2.
+但函式內容並沒有綁定特定資源。為了節省記憶體，你也許可以這麼撰寫：
+function toString() {
+    return '[' + this.name + ', ' + this.age + ']';
+}
+
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    this.to
+
+3.這可以解決重複建立函式實例的問題，但在全域範圍（物件）上多了個toString名稱。如果你知道函式在定義時，都有個prototype特性，則可以如下：
+
+	Person.prototype.toString = function (){
+		return this.name+":"+this.age+"\n";};
+		
+		p1 = new Person('Justin', 35);
+		p2 = new Person('Momor', 32);
+
+4.使用new關鍵字時，JavaScript會先建立一個空物件，接著設定物件的原型為函式的prototype特性所參考的物件，然後呼叫建構式並將所建立的空物件設為this。
+
+5.你可以在任何時間點對函式的prototype新增特性，由於原型查找的機制，透過函式而建構的所有實例，都可以找到該特性，即使實例建立之後，特性才被添加到原型中。例如：
+	js> function Some() {}
+js> var s = new Some();
+js> print(s.data);
+undefined
+js> Some.prototype.data = 10;
+10
+js> print(s.data);
+10
+
+6. 物件的原型是在建立物件之後就確立下來的，所以在這行：
+var sportsCar = new SportsCar();
+sportsCar就被指定了原型物件，也就是當時的SportsCar.prototype所參考的物件，預設就是具有一個constructor特性 的Object實例
+
+
+sportsCar.doors
+
+http://openhome.cc/Gossip/JavaScript/ClassSimulation.html
+
+
+var Class = {};
+Class.create = function(methods) {
+    var Clz = methods.initialize;
+    for(var mth in methods) {
+        if(mth != 'initialize') {
+            Clz.prototype[mth] = methods[mth];
+        }
+    }
+    return Clz;
+};
+
+那麼你就可以這麼使用：
+var Circle = Class.create({
+    initialize : function(x, y, r) { // 作為建構式
+        this.x = x;
+        this.y = y;
+        this.r = r;
+    },
+    area : function() {
+        return Math.PI * Math.pow(this.r, 2);
+    },
+    toString : function() {
+        var text = [];
+        for(var p in this) {
+            if(typeof this[p] != 'function') {
+                text.push(p + ':' + this[p]);
+            }
+        }
+        return '[' + text.join() + ']';
+    }
+});
+var circle = new Circle(10, 10, 5);
+
+如果想封裝類別的繼承，則可以這麼作：
+Class.extend = function(Superclz, methods) {
+    var Subclz = this.create(methods);
+    var subproto = Subclz.prototype;
+    Subclz.prototype = new Superclz();
+    for(var p in Subclz.prototype) {
+        if(Subclz.prototype.hasOwnProperty(p)) {
+            delete Subclz.prototype[p];
+        }
+    }
+    Subclz.prototype.constructor = Subclz;
+    for(var p in subproto) {
+        Subclz.prototype[p] = subproto[p];
+    }
+    return Subclz;
+};
+
+例如，想繼承先前建立的Circle，則可以如下：
+var Cylinder = Class.extend(Circle, {
+    initialize : function(x, y, r, h) {
+        Circle.call(this, x, y, r);
+        this.h = h;
+    },
+    volumn : function() {
+        return this.area() * this.h;
+    }
+});
+var cylinder = new Cylinder(10, 10, 5, 15);
+
+以上僅是類別模擬的概念，至於想要模擬到什麼程度，或者是想達到什麼樣的風格，其實有各種的設計方式。
+
+
+6.
+
