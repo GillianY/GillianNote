@@ -8,3 +8,24 @@ https://tt5.org/%E7%94%A8-chart-js-%E7%95%AB%E5%9C%96%E8%A1%A8%EF%BC%8C%E5%8D%81
 
 GOOD:
 http://bioankeyang.blogspot.tw/2013/09/canvas-pie-chart-doughnut-chart.html
+
+二進位座位表
+https://sites.google.com/a/vtsh.tc.edu.tw/wei-dao-zhong-xue-cheng-shi-jing-ying-ban/excel/shifanruhejianliyizhangyoutedingzuoweidezuoweibiaozuozheyanghuanmou
+
+
+canvas animation 
+https://developer.mozilla.org/zh-TW/docs/Web/API/Canvas_API/Tutorial/%E5%9F%BA%E7%A4%8E%E5%8B%95%E7%95%AB
+
+color: pattern
+http://www.playpcesor.com/2015/06/color-scheme-top-12-tools.html
+
+https://coolors.co/ffffff-3b413c-9db5b2-daf0ee-94d1be
+
+
+Kuler (photoshop )
+https://color.adobe.com/zh/
+
+
+google fonts:https://fonts.google.com/
+google fonts effects
+https://developers.google.com/fonts/docs/getting_started

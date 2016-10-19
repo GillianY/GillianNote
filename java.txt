@@ -1,0 +1,44 @@
+
+https://read01.com/3aL5RO.html
+
+
+JAVA5:
+1.泛型 Generics:
+
+2.可變參數varargs(varargs number of arguments)
+
+參數類型相同時，把重載函數合併到一起了。
+
+如：public void test(object... objs){
+
+for(Object obj:objs){
+
+System.out.println(obj);
+
+}
+
+
+原文網址：https://read01.com/3aL5RO.html
+
+3.Annotations 它是java中的metadata（注釋）
+
+A、Tiger中預定義的三種標準annotation
+
+a 、Override
+
+指出某個method覆蓋了superclass 的method當你要覆蓋的方法名拼寫錯時編譯不通過
+
+b、Deprecated
+
+指出某個method或element類型的使用是被阻止的，子類將不能覆蓋該方法
+
+c、SupressWarnings
+
+關閉class、method、field、variable 初始化的編譯期警告，比如：List沒有使用 Generic,則@SuppressWarnings("unchecked")去掉編譯期警告。
+
+
+原文網址：https://read01.com/3aL5RO.html
+
+
+boolean Character.equalsIgnoreCase(char ch1, char ch2)
+原文網址：https://read01.com/3aL5RO.html
