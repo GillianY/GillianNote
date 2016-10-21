@@ -1,0 +1,67 @@
+Day1:
+1.URL : Eclipseº†½éÅc½ÌŒW
+http://www.cc.ntu.edu.tw/chinese/epaper/0020/20120320_2003.html
+
+- create project
+
+- create a class with main method -> sysout ALT + "/"
+
+- Window -> Preferences -> General -> Workspace -> text file encoding -> Other -> UTF-8
+
+- ×ÖówÔO¶¨ Window -> Preferences -> General -> Appearance -> Colors and Fonts -> Basic -> ....
+
+- Window -> Perspective -> Reset Perspective
+
+- // TODO
+- Window -> Show View - Tasks
+
+- Source -> Organized imports
+
+- Source -> Generate Getters/Setters/Contructors
+
+- Project -> Export -> Generate Java Doc
+
+- Project Export/Import 
+
+2. genymotion 
+https://www.genymotion.com
+https://cloud.genymotion.com/page/launchpad/download/
+https://www.virtualbox.org/
+
+setup : settings_.ADB > V use custome Android sdk location (look up android studio )
+	Misc: clear cache
+
+
+
+
+Day2:
+1. Android Project Structure
+
+http://stackoverflow.com/questions/17324849/android-studio-gradle-build-speed-up
+	
+First create a file named "gradle.properties" in the following directory:
+
+/home/<username>/.gradle/ (Linux)
+/Users/<username>/.gradle/ (Mac)
+C:\Users\<username>\.gradle (Windows)
+Add this line to the file:
+
+org.gradle.daemon=true
+org.gradle.parallel=true
+
+And check this options in Android Studio
+Build>grandle> offlinework
+
+
+2. Activity (look up API dictionary )
+https://developer.android.com/reference/android/app/Activity.html
+
+
+
+M05
+
+3. ??
+  getMenuInflater().inflate(R.menu.activity_main, menu);
+
+ textView.setText(seekBar.getProgress() + "/" + seekBar.getMax());
+  seekBar.setOnSeekBarChangeListener( new OnSeekBarChangeListener() { int progress = 0;

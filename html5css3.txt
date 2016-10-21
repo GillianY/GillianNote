@@ -29,3 +29,21 @@ https://color.adobe.com/zh/
 google fonts:https://fonts.google.com/
 google fonts effects
 https://developers.google.com/fonts/docs/getting_started
+
+
+HTML5 GAME http://www.kuqin.com/webpagedesign/20111029/314003.html
+
+
+
+Alert "Hello" every 3 seconds (3000 milliseconds):
+
+
+HTML5 CSS3:
+
+1.window:
+setInterval(function(){ alert("Hello"); }, 3000);
+alert()、confirm()、prompt()、setTimeout()、clearTimeout()、setInterval()、clearInterval()
+
+open()、moveTo()、scroll()、scrollTo()
+
+2. css3 template :http://www.w3schools.com/w3css/w3css_templates.asp
