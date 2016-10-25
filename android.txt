@@ -65,3 +65,85 @@ M05
 
  textView.setText(seekBar.getProgress() + "/" + seekBar.getMax());
   seekBar.setOnSeekBarChangeListener( new OnSeekBarChangeListener() { int progress = 0;
+
+4. Thread review
+
+http://programming.im.ncnu.edu.tw/J_Chapter9.htm
+http://www.openhome.cc/Gossip/JavaGossip-V2/ThreadSynchronized.htm
+http://www.codedata.com.tw/java/jdk8-synchronized-lock-stampedlock/
+https://www.javaworld.com.tw/jute/post/view?bid=5&id=36775&tpg=1&ppg=1&sty=1&age=0
+
+
+5. Anoymous class : final variable 
+   because of java course
+http://stackoverflow.com/questions/4732544/why-are-only-final-variables-accessible-in-anonymous-class
+
+
+6. java.util.Date 
+   java.text.Simpleformat
+		TimeZone	
+
+7. Java Lambda/Closure :
+http://openhome.cc/eGossip/Blog/index.html#UnderstandingLambdaClosure
+https://www.javaworld.com.tw/jute/post/view?bid=12&id=313425
+
+
+8. Java Timer TimerTask  (util)
+keyword :Timer TimerTask(extends), schedule(Task, duration, periate) , timer.cancel(); timer.purge();
+
+	Timer timer = new Timer();
+	timer.schedule(new TimerTask(){
+			int counter =1;
+			public void run() {
+				System.out.println(new Date().toString());
+				if(++counter >10)
+				{
+					timer.cancel(); //cancel timer
+					timer.purge(); // delete schedule
+				}	
+			}
+		},0,1000 );
+
+
+9. threadGroup
+http://openhome.cc/Gossip/JavaGossip-V2/ThreadGroup.htm
+
+
+
+
+10.
+1. Camera 
+https://developer.android.com/guide/topics/media/camera.html
+http://wiki.jikexueyuan.com/project/android-actual-combat-skills/android-hardware-camera2-operating-guide.html
+https://inducesmile.com/android/android-camera2-api-example-tutorial/
+https://github.com/googlesamples/android-Camera2Basic
+
+
+(1)declare the camera requirement in your manifest.
+         the child of <application>:
+ 	<uses-permission android:name="android.permission.CAMERA" />
+        <uses-permission android:name="android.permission.RECORD_AUDIO" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-feature android:name="android.hardware.camera2.full" />
+        <uses-feature android:name="android.hardware.location.gps" />
+
+(2)Customized Camera 
+	android.hardware.camera2 API or camera Intent. 
+	An intent action type of MediaStore.ACTION_IMAGE_CAPTURE or MediaStore.ACTION_VIDEO_CAPTURE
+(3)Storage 	
+
+
+
+2. user permission :
+http://blog.yam.com/jackiefu/article/37082465
+
+
+
+3. 撰寫一個倒數(十秒)計時器，可以開始，重置，暫停或是繼續!
+
+4. 修改小時鐘，加入一個按鈕，可以暫停或是繼續!
+
+5. 用Timer/TimerTask改寫小時鐘
+
+app lists :https://www.appannie.com/apps/ios/top/japan/overall/?device=iphone
+
