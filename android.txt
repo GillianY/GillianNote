@@ -147,3 +147,13 @@ http://blog.yam.com/jackiefu/article/37082465
 
 app lists :https://www.appannie.com/apps/ios/top/japan/overall/?device=iphone
 
+
+20161027
+
+1.Timer  TimerTask 
+http://openhome.cc/Gossip/JavaGossip-V2/TimerTaskAndTimer.htm
+
+public class DateTask extends TimerTask {
+    public void run() {
+
+
