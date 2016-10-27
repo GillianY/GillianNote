@@ -157,3 +157,8 @@ public class DateTask extends TimerTask {
     public void run() {
 
 
+Camera API
+http://developer.android.com/guide/topics/media/camera.html
+
+enum
+http://openhome.cc/Gossip/JavaEssence/Enum.html
