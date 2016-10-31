@@ -162,3 +162,11 @@ http://developer.android.com/guide/topics/media/camera.html
 
 enum
 http://openhome.cc/Gossip/JavaEssence/Enum.html
+
+
+
+20161031
+1. jason validator
+http://jsonlint.com/#
+
+2.https://developer.android.com/reference/android/content/res/Resources.html
